@@ -29,9 +29,11 @@ func (el *EventLoop) Start() {
 
 func (el *EventLoop) Execute() {
 	for !el.ExitFlag || len(el.Queue) > 0 {
-		var cmd Command
-		cmd, el.Queue = el.Queue[0], el.Queue[1:]
-		cmd.Execute(el)
+		if len(el.Queue) > 0 {
+			var cmd Command
+			cmd, el.Queue = el.Queue[0], el.Queue[1:]
+			cmd.Execute(el)
+		}
 	}
 	el.ExitChan <- true
 }

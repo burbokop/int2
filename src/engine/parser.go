@@ -3,6 +3,7 @@ package engine
 import (
 	"fmt"
 	"reflect"
+	"strconv"
 	"strings"
 )
 
@@ -62,6 +63,40 @@ func RemovePtr(t reflect.Type) reflect.Type {
 		t = t.Elem()
 	}
 	return t
+}
+
+func InitializeStruct(rv reflect.Value, slice []string) {
+	fmt.Println("InitializeStruct:", rv, rv.Type(), slice)
+	if !rv.CanAddr() && rv.Type().Kind() == reflect.Ptr {
+		rv = rv.Elem()
+	}
+	if !rv.CanAddr() {
+		return
+	}
+
+	for i := 0; i < rv.NumField(); i++ {
+		if i >= len(slice) {
+			return
+		}
+		fmt.Println("can2:", rv, slice)
+
+		field := rv.Field(i)
+		fmt.Println("can3:", field.Type(), field.CanSet())
+
+		switch field.Kind() {
+		case reflect.String:
+			field.SetString(slice[i])
+		case reflect.Int:
+			{
+				i, err := strconv.ParseInt(slice[i], 10, 64)
+				if err == nil {
+					field.SetInt(i)
+				}
+			}
+		default:
+			fmt.Println("unknown field")
+		}
+	}
 }
 
 func (parser *Parser) Parse(str string) (Command, error) {
