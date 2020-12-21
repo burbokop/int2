@@ -1,7 +1,4 @@
-print message1
-print message2
-reverse message3
-reverse message4 defer
-reverse message5
-print message6
-split gogadoda d
+print str0
+print str1
+cat a b
+print str2
