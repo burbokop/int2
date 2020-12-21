@@ -7,7 +7,7 @@ import (
 	"os"
 	"reflect"
 
-	engine "github.com/burbokop/simple_interpreter/src/engine"
+	engine "github.com/burbokop/int2/src/engine"
 )
 
 func main() {
