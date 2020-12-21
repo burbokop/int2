@@ -1,7 +1,5 @@
-# simple_interpreter
+# int2
 
-
-
-# running
+## running
 
 in root folder of project: `go run ./cmd/interpreter/ -i ./examples/example0`
