@@ -1,3 +1,5 @@
+github.com/burbokop/simple_interpreter v0.0.0-20201215203651-7f770c359ccb h1:yOriz5gInHbrtqbV4JWq+cG9BPnJ1JT1SPsnMbnVtew=
+github.com/burbokop/simple_interpreter v0.0.0-20201215203651-7f770c359ccb/go.mod h1:H7eLI/R4MvjBnZEG36OHXgWoF2U3UNQkJmMVdy/AV0k=
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/enriquebris/goconcurrentqueue v0.6.0 h1:DJ97cgoPVoqlC4tTGBokn/omaB3o16yIs5QdAm6YEjc=
 github.com/enriquebris/goconcurrentqueue v0.6.0/go.mod h1:wGJhQNFI4wLNHleZLo5ehk1puj8M6OIl0tOjs3kwJus=
